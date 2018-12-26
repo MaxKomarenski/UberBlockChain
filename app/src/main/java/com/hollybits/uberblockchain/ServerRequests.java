@@ -39,4 +39,10 @@ public interface ServerRequests {
 
     @GET("/getParcelsToDeliver")
     Call<List<Parcel>> getParcelToDeliver(@Query("id") Long id);
+
+    @GET("/getMyParcels")
+    Call<List<Parcel>> getMySentParcel(@Query("id") Long id);
+
+    @GET("/getParcelsForMe")
+    Call<List<Parcel>> getParcelsForMe(@Query("id") Long id);
 }

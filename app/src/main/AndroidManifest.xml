@@ -24,10 +24,11 @@
         <activity android:name=".AllParcelOrders" />
         <activity android:name=".MakeOrderActivity" />
         <activity android:name=".MyOrderParcels" />
-        <activity android:name=".MySendParsels"></activity>
+        <activity android:name=".MySendParsels" />
         <activity android:name=".MyGettableParsels" />
         <activity android:name=".MySentParcels" />
         <activity android:name=".LikeDriverIMustToDeliver" />
+        <activity android:name=".LikeUserIMustToDeliver"></activity>
     </application>
 
 </manifest>

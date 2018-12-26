@@ -9,8 +9,9 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
 
+import com.hollybits.uberblockchain.R;
+import com.hollybits.uberblockchain.adapter.MustToDeliverDriverAdapter;
 import com.hollybits.uberblockchain.adapter.MySentParcelAdapter;
-import com.hollybits.uberblockchain.model.Order;
 import com.hollybits.uberblockchain.model.Parcel;
 
 import java.util.ArrayList;
@@ -23,8 +24,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class MySentParcels extends AppCompatActivity {
-
+public class LikeUserIMustToDeliver extends AppCompatActivity {
     @BindView(R.id.myOrderRecyclerView)
     RecyclerView recyclerView;
 
@@ -49,13 +49,13 @@ public class MySentParcels extends AppCompatActivity {
         backToAccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent myIntent = new Intent(MySentParcels.this, MainAccount.class);
-                MySentParcels.this.startActivity(myIntent);
+                Intent myIntent = new Intent(LikeUserIMustToDeliver.this, MainAccount.class);
+                LikeUserIMustToDeliver.this.startActivity(myIntent);
             }
         });
 
         Long id = Paper.book().read(MainApplication.USER_ID);
-        MainApplication.getServerRequests().getMySentParcel(id).enqueue(new Callback<List<Parcel>>() {
+        MainApplication.getServerRequests().getParcelsForMe(id).enqueue(new Callback<List<Parcel>>() {
             @Override
             public void onResponse(Call<List<Parcel>> call, Response<List<Parcel>> response) {
                 if (response.body() != null){

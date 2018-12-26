@@ -23,6 +23,9 @@ public class MainAccount extends AppCompatActivity {
     @BindView(R.id.mySendOrdersButton)
     Button mySendParcelButton;
 
+    @BindView(R.id.parcelsForMe)
+    Button parcelsForMe;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,6 +60,14 @@ public class MainAccount extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent myIntent = new Intent(MainAccount.this, MySentParcels.class);
+                MainAccount.this.startActivity(myIntent);
+            }
+        });
+
+        parcelsForMe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent = new Intent(MainAccount.this, LikeUserIMustToDeliver.class);
                 MainAccount.this.startActivity(myIntent);
             }
         });
