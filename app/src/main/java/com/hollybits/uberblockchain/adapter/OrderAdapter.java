@@ -58,8 +58,8 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.MyViewHolder
         final Parcel parcel = orders.get(i);
 
         myViewHolder.price.setText(Double.valueOf(parcel.getPrice()).toString() + " $");
-        myViewHolder.from.setText("From: " + parcel.getAddressFrom());
-        myViewHolder.to.setText("To: " + parcel.getAddressTo());
+        myViewHolder.from.setText("From: " + parcel.getAddressFrom().replace(",",",  "));
+        myViewHolder.to.setText("To: " + parcel.getAddressTo().replace(",",",  "));
 
         myViewHolder.pickUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
